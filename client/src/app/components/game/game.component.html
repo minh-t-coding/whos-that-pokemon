@@ -2,59 +2,38 @@
   <app-header [showQuit]="true" [quitLabel]="'quit'" (quit)="onQuitFromGame()"></app-header>
 
   <div class="content">
-    <img src="/Pokemon_logo.png" alt="Pokemon Logo" class="pokemon-logo" />
-    <h1 class="game-title">Who's that Pokemon?</h1>
+    <div class="logo-and-tag">
+      <img src="/Pokemon_logo.png" alt="Pokemon Logo" class="pokemon-logo" />
+      <h1 class="game-title">Who's that Pokemon?</h1>
+    </div>
 
     @if (isLoading()) {
     <div class="loading">Loading...</div>
     } @else if (currentPokemon()) {
     <div class="silhouette-wrapper">
       <div class="silhouette-frame">
-        <img
-          alt="Pokemon Silhouette"
-          title="Pokemon Silhouette"
-          [src]="currentPokemon()!.sprites.front_default"
-          class="silhouette-img"
-          [class.silhouette-img--hidden]="hintState().blur || hintState().reveal"
-        />
+        <img alt="Pokemon Silhouette" title="Pokemon Silhouette" [src]="currentPokemon()!.sprites.front_default"
+          class="silhouette-img" [class.silhouette-img--hidden]="hintState().blur || hintState().reveal" />
         @if (hintState().blur && !hintState().reveal) {
-        <img
-          alt="Pokemon Blurred"
-          title="Pokemon Blurred"
-          [src]="currentPokemon()!.sprites.front_default"
-          class="blurred-img"
-        />
+        <img alt="Pokemon Blurred" title="Pokemon Blurred" [src]="currentPokemon()!.sprites.front_default"
+          class="blurred-img" />
         } @if (hintState().reveal) {
-        <img
-          alt="Pokemon Reveal"
-          [src]="currentPokemon()!.sprites.front_default"
-          [alt]="currentPokemon()!.name"
-          [title]="currentPokemon()!.name"
-          class="reveal-img"
-        />
+        <img alt="Pokemon Reveal" [src]="currentPokemon()!.sprites.front_default" [alt]="currentPokemon()!.name"
+          [title]="currentPokemon()!.name" class="reveal-img" />
         }
       </div>
     </div>
 
     <div class="input-section">
       @if (feedbackMessage()) {
-      <div
-        class="feedback-container"
-        [class.feedback-container--correct]="feedbackType() === 'correct'"
-        [class.feedback-container--wrong]="feedbackType() === 'wrong'"
-      >
+      <div class="feedback-container" [class.feedback-container--correct]="feedbackType() === 'correct'"
+        [class.feedback-container--wrong]="feedbackType() === 'wrong'">
         {{ feedbackMessage() }}
       </div>
       }
-      <input
-        type="text"
-        class="guess-input"
-        placeholder="Pokemon name"
-        [value]="guess()"
-        (input)="guess.set($any($event.target).value)"
-        (keyup.enter)="onSubmitGuess()"
-        [disabled]="isGameOver() || isRevealed() || showCatchAnimation()"
-      />
+      <input type="text" class="guess-input" placeholder="Pokemon name" [value]="guess()"
+        (input)="guess.set($any($event.target).value)" (keyup.enter)="onSubmitGuess()"
+        [disabled]="isGameOver() || isRevealed() || showCatchAnimation()" />
     </div>
 
     <div class="stats-container">
@@ -64,12 +43,8 @@
 
       <div class="skips-box">Skips: {{ skipCount() }} / {{ maxSkips() }}</div>
 
-      <button
-        type="button"
-        class="caught-pokemon-button"
-        (click)="onCaughtPokemonClick()"
-        [disabled]="showCatchAnimation()"
-      >
+      <button type="button" class="caught-pokemon-button" (click)="onCaughtPokemonClick()"
+        [disabled]="showCatchAnimation()">
         <img src="/PokeBall_icon.png" alt="Caught Pokemon" class="button-icon" />
         <span>Caught ({{ caughtPokemonList().length }})</span>
       </button>
@@ -78,45 +53,27 @@
     @if (isRevealed() && !showCatchAnimation() && !isCorrectGuess()) {
     <div class="reveal-message">
       <p>It's {{ currentPokemon()?.name }}!</p>
-      <button
-        type="button"
-        class="next-pokemon-button"
-        (click)="onNextPokemon()"
-        [disabled]="isGameOver()"
-      >
+      <button type="button" class="next-pokemon-button" (click)="onNextPokemon()" [disabled]="isGameOver()">
         Next Pokemon
       </button>
     </div>
     } @else if (!showCatchAnimation()) {
     <div class="actions">
       <div class="actions__item">
-        <app-pokeball-button
-          [label]="'Skip'"
-          [variant]="'action'"
-          [iconSize]="'90px'"
-          [disabled]="isGameOver() || isRevealed() || showCatchAnimation()"
-          (clicked)="onSkip()"
-        >
+        <app-pokeball-button [label]="'Skip'" [variant]="'action'" [iconSize]="'90px'"
+          [disabled]="isGameOver() || isRevealed() || showCatchAnimation()" (clicked)="onSkip()">
         </app-pokeball-button>
       </div>
       <div class="actions__item actions__item--large">
-        <app-pokeball-button
-          [label]="'Scan'"
-          [variant]="'action'"
-          [iconSize]="'150px'"
+        <app-pokeball-button [label]="'Scan'" [variant]="'action'" [iconSize]="'150px'"
           [disabled]="isGameOver() || isRevealed() || !guess().trim() || showCatchAnimation()"
-          (clicked)="onSubmitGuess()"
-        >
+          (clicked)="onSubmitGuess()">
         </app-pokeball-button>
       </div>
       <div class="actions__item">
-        <app-pokeball-button
-          [label]="'Hint'"
-          [variant]="'action'"
-          [iconSize]="'90px'"
+        <app-pokeball-button [label]="'Hint'" [variant]="'action'" [iconSize]="'90px'"
           [disabled]="isGameOver() || isRevealed() || hintState().reveal || showCatchAnimation()"
-          (clicked)="onHintButtonClick()"
-        >
+          (clicked)="onHintButtonClick()">
         </app-pokeball-button>
       </div>
     </div>
@@ -125,40 +82,20 @@
     <div class="hint-trail">
       <div class="hint-trail-header">Hint Trail</div>
       <div class="hint-options">
-        <button
-          type="button"
-          class="hint-option"
-          [class.active]="hintState().cry"
-          (click)="playCry()"
-          [disabled]="!hintState().cry"
-        >
+        <button type="button" class="hint-option" [class.active]="hintState().cry" (click)="playCry()"
+          [disabled]="!hintState().cry">
           Cry
         </button>
-        <button
-          type="button"
-          class="hint-option"
-          [class.active]="hintState().types"
-          (click)="onHintClick('types')"
-          [disabled]="!hintState().types"
-        >
+        <button type="button" class="hint-option" [class.active]="hintState().types" (click)="onHintClick('types')"
+          [disabled]="!hintState().types">
           Types
         </button>
-        <button
-          type="button"
-          class="hint-option"
-          [class.active]="hintState().blur"
-          (click)="onHintClick('blur')"
-          [disabled]="!hintState().blur"
-        >
+        <button type="button" class="hint-option" [class.active]="hintState().blur" (click)="onHintClick('blur')"
+          [disabled]="!hintState().blur">
           Color
         </button>
-        <button
-          type="button"
-          class="hint-option"
-          [class.active]="hintState().reveal"
-          (click)="onHintClick('reveal')"
-          [disabled]="!hintState().reveal || isRevealed()"
-        >
+        <button type="button" class="hint-option" [class.active]="hintState().reveal" (click)="onHintClick('reveal')"
+          [disabled]="!hintState().reveal || isRevealed()">
           Reveal
         </button>
       </div>
@@ -170,26 +107,16 @@
   </div>
 
   @if (showCatchAnimation() && caughtPokemon()) {
-  <app-catch-animation
-    [pokemonName]="caughtPokemon()!.name"
-    [pokemonImage]="caughtPokemon()!.image"
-    (animationComplete)="onCatchAnimationComplete()"
-  >
+  <app-catch-animation [pokemonName]="caughtPokemon()!.name" [pokemonImage]="caughtPokemon()!.image"
+    (animationComplete)="onCatchAnimationComplete()">
   </app-catch-animation>
   } @if (showCaughtPokemonModal()) {
-  <app-caught-pokemon-modal
-    [caughtPokemon]="caughtPokemonList()"
-    [isOpen]="showCaughtPokemonModal()"
-    (closeModal)="onCloseCaughtPokemonModal()"
-  >
+  <app-caught-pokemon-modal [caughtPokemon]="caughtPokemonList()" [isOpen]="showCaughtPokemonModal()"
+    (closeModal)="onCloseCaughtPokemonModal()">
   </app-caught-pokemon-modal>
   } @if (showGameOverModal()) {
-  <app-game-over-modal
-    [score]="score()"
-    (retry)="onRetry()"
-    (leaderboard)="onLeaderboardFromGameOver()"
-    (quit)="onQuit()"
-  >
+  <app-game-over-modal [score]="score()" (retry)="onRetry()" (leaderboard)="onLeaderboardFromGameOver()"
+    (quit)="onQuit()">
   </app-game-over-modal>
   }
 </div>

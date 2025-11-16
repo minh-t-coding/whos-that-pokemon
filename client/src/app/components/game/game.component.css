@@ -6,6 +6,10 @@
   position: relative;
 }
 
+.logo-and-tag {
+  transform: translateY(-70px);
+}
+
 .pokemon-logo {
   max-width: 500px;
   width: 100%;
@@ -65,7 +69,6 @@
 
 .silhouette-wrapper {
   text-align: center;
-  margin: 20px 0;
 }
 
 .silhouette-frame {
@@ -115,6 +118,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -351,7 +355,7 @@
   border-radius: var(--border-radius);
   padding: var(--spacing-lg);
   margin: var(--spacing-lg) 0;
-  text-align:center;
+  text-align: center;
   min-width: 300px;
 }
 
