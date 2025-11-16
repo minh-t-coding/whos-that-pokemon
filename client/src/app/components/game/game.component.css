@@ -144,7 +144,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  filter: blur(12px) saturate(120%);
+  filter: blur(8px) saturate(120%);
   width: 100%;
   min-width: 300px;
   max-width: 500px;

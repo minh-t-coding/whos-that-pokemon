@@ -1,20 +1,10 @@
-<app-modal
-  [isOpen]="isOpen()"
-  [title]="'Catch Pokémon'"
-  [variant]="'default'"
-  (closeModal)="onClose()"
->
+<app-modal [isOpen]="isOpen()" [title]="'Caught Pokémon'" [variant]="'default'" (closeModal)="onClose()">
   <div class="pokemon-grid">
     @for (pokemon of pokemonGrid(); track $index) {
     <div class="pokemon-slot">
       @if (pokemon) {
-      <img
-        alt="Pokemon Sprite"
-        [src]="pokemon.image"
-        [alt]="pokemon.name"
-        class="pokemon-sprite"
-        [title]="pokemon.name"
-      />
+      <img alt="Pokemon Sprite" [src]="pokemon.image" [alt]="pokemon.name" class="pokemon-sprite"
+        [title]="pokemon.name" />
       } @else {
       <div class="pokemon-silhouette"></div>
       }
