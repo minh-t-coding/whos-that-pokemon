@@ -1,0 +1,34 @@
+<div class="catch-animation-overlay">
+  <div class="catch-animation-container">
+    <div class="pokeball-throw">
+      <div class="pokeball">
+        <div class="pokeball-top"></div>
+        <div class="pokeball-center"></div>
+        <div class="pokeball-bottom"></div>
+        <div class="pokeball-button"></div>
+      </div>
+    </div>
+
+    <div class="pokeball-glow"></div>
+
+    <div class="particles">
+      @for (particle of [1, 2, 3, 4, 5, 6, 7, 8]; track particle) {
+      <div class="particle" [style.--index]="particle"></div>
+      }
+    </div>
+
+    <div class="catch-message">
+      <h2 class="catch-text">Gotcha!</h2>
+      <p class="pokemon-name">{{ pokemonName() }} was caught!</p>
+    </div>
+
+    <div class="caught-pokemon" [class.pokemon-in-front]="pokemonInFront">
+      <img
+        alt="Pokemon Sprite"
+        [src]="pokemonImage()"
+        [alt]="pokemonName()"
+        class="pokemon-sprite"
+      />
+    </div>
+  </div>
+</div>

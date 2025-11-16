@@ -1,0 +1,122 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-index-overlay);
+  padding: var(--spacing-lg);
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background-color: var(--color-white);
+  border: var(--border-width-thick) solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  min-width: 400px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease-out;
+}
+
+.modal-content.modal-pokemon {
+  background-color: var(--color-primary);
+  border: var(--border-width-thick) solid var(--color-border);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--color-border-gray);
+}
+
+.modal-content.modal-pokemon .modal-header {
+  border-bottom: none;
+}
+
+.modal-title {
+  font-family: 'Pokemon', monospace;
+  font-size: 24px;
+  color: var(--color-text-dark);
+  margin: 0;
+  text-transform: lowercase;
+}
+
+.modal-content.modal-pokemon .modal-title {
+  color: var(--color-white);
+  text-transform: lowercase;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-light);
+  font-size: 24px;
+  transition: color 0.2s;
+}
+
+.close-button:hover {
+  color: var(--color-text-dark);
+}
+
+.modal-content.modal-pokemon .close-button {
+  color: var(--color-text-light);
+}
+
+.modal-content.modal-pokemon .close-button:hover {
+  color: var(--color-white);
+}
+
+.close-button i {
+  font-size: 24px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: var(--spacing-md);
+    min-width: auto;
+  }
+  
+  .modal-title {
+    font-size: 20px;
+  }
+}
+

@@ -1,0 +1,55 @@
+<div class="home-container">
+  <app-header></app-header>
+
+  <div class="content">
+    <img src="/Pokemon_logo.png" alt="Pokemon Logo" class="pokemon-logo" />
+    <h1 class="game-title">Who's that Pokemon?</h1>
+
+    <div class="pokeball-container">
+      <img src="/PokeBall_icon.png" alt="Pokeball" class="pokeball-icon" />
+    </div>
+
+    <button type="button" class="play-button" (click)="onPlayClick()">Play</button>
+
+    <section class="instructions">
+      <h2>How to Play</h2>
+      <p class="instructions-copy">
+        Scan the silhouette, guess fast, and collect every unique Pokémon. Wrong guesses cost tries
+        and you can only skip five times per run—after that it's game over!
+      </p>
+
+      <div class="instruction-grid">
+        <div class="instruction-card">
+          <img src="/PokeBall_icon.png" alt="Scan icon" class="instruction-icon" />
+          <div>
+            <h3>Scan</h3>
+            <p>Type a name and press Scan to lock in your guess.</p>
+          </div>
+        </div>
+        <div class="instruction-card">
+          <img src="/PokeBall_icon.png" alt="Skip icon" class="instruction-icon skip-icon" />
+          <div>
+            <h3>Skip</h3>
+            <p>Jump to another Pokémon, but only five skips per game.</p>
+          </div>
+        </div>
+        <div class="instruction-card">
+          <img src="/PokeBall_icon.png" alt="Hint icon" class="instruction-icon hint-icon" />
+          <div>
+            <h3>Hint Trail</h3>
+            <p>Unlock cry, type, color, and reveal—but each hint lowers your score.</p>
+          </div>
+        </div>
+        <div class="instruction-card">
+          <img src="/PokeBall_icon.png" alt="Catch icon" class="instruction-icon catch-icon" />
+          <div>
+            <h3>Catch</h3>
+            <p>Guess correctly to add unique Pokémon to your collection.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="creator-credit">Created by Minh Nguyen & Devan Martinez</div>
+</div>

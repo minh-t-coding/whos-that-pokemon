@@ -1,0 +1,39 @@
+.pokeball-button {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-sm);
+  transition: transform 0.1s;
+  font-family: 'Pokemon', monospace;
+}
+
+.pokeball-button--action {
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.pokeball-button:hover:not(.pokeball-button--disabled) {
+  transform: scale(1.1);
+}
+
+.pokeball-button--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pokeball-icon {
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+
+.pokeball-label {
+  color: var(--color-white);
+  font-family: 'Pokemon', monospace;
+  font-size: 14px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+

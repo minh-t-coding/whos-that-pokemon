@@ -1,0 +1,21 @@
+{
+  "name": "pokemon-quiz",
+  "version": "1.0.0",
+  "description": "A pokemon guessing game",
+  "main": "index.js",
+  "scripts": {
+    "serve": "cd client && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "cd client && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fasttrackd-student-work/angular-whos-who-oct-2025-team-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fasttrackd-student-work/angular-whos-who-oct-2025-team-2/issues"
+  },
+  "homepage": "https://github.com/fasttrackd-student-work/angular-whos-who-oct-2025-team-2#readme"
+}

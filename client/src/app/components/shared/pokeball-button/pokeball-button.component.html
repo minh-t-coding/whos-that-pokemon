@@ -1,0 +1,28 @@
+<button
+  type="button"
+  class="pokeball-button"
+  [class.pokeball-button--action]="variant() === 'action'"
+  [class.pokeball-button--disabled]="disabled()"
+  [disabled]="disabled()"
+  (click)="onClick()"
+>
+  @if (variant() === 'action') {
+  <img
+    src="/PokeBall_icon.png"
+    alt="Pokeball"
+    class="pokeball-icon"
+    [style.width]="iconSize()"
+    [style.height]="iconSize()"
+  />
+  <span class="pokeball-label">{{ label() }}</span>
+  } @else {
+  <img
+    src="/PokeBall_icon.png"
+    alt="Pokeball"
+    class="pokeball-icon"
+    [style.width]="iconSize()"
+    [style.height]="iconSize()"
+  />
+  <span class="pokeball-label">{{ label() }}</span>
+  }
+</button>

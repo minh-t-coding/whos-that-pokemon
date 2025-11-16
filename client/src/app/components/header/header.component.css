@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.quit-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 2px solid var(--color-white);
+  border-radius: 6px;
+  color: var(--color-white);
+  font-family: 'Pokemon', monospace;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 16px;
+  text-transform: lowercase;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.quit-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.quit-button i {
+  font-size: 18px;
+}

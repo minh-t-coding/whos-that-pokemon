@@ -1,0 +1,66 @@
+<div class="difficulty-container">
+  <div class="header">
+    <button type="button" class="back-button" (click)="onBack()" aria-label="Back">
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
+    <button type="button" class="leaderboard-link" (click)="onLeaderboardClick()">
+      leaderboard
+    </button>
+  </div>
+
+  <div class="content">
+    <img src="/Pokemon_logo.png" alt="Pokemon Logo" class="pokemon-logo" />
+    <h1 class="game-title">Who's that Pokemon?</h1>
+
+    <h2 class="section-title">Difficulty</h2>
+
+    <div class="difficulty-options">
+      <div
+        class="difficulty-card"
+        [class.selected]="selectedDifficulty() === 'kanto'"
+        (click)="selectDifficulty('kanto')"
+      >
+        <img src="/PokeBall_icon.png" alt="Pokeball" class="difficulty-pokeball" />
+        <h3>Kanto Starters</h3>
+        <p>Original 151 Pokémon - great for warm-ups.</p>
+      </div>
+
+      <div
+        class="difficulty-card"
+        [class.selected]="selectedDifficulty() === 'johto'"
+        (click)="selectDifficulty('johto')"
+      >
+        <img src="/PokeBall_icon.png" alt="Pokeball" class="difficulty-pokeball" />
+        <h3>Johto Challenge</h3>
+        <p>Pokédex #152-251 keeps things spicy.</p>
+      </div>
+
+      <div
+        class="difficulty-card"
+        [class.selected]="selectedDifficulty() === 'world'"
+        (click)="selectDifficulty('world')"
+      >
+        <img src="/PokeBall_icon.png" alt="Pokeball" class="difficulty-pokeball" />
+        <h3>World Tour</h3>
+        <p>Any Pokémon up to Scarlet/ Violet entries.</p>
+      </div>
+    </div>
+
+    <input
+      type="text"
+      class="name-input"
+      placeholder="Enter your name"
+      [value]="playerName()"
+      (input)="playerName.set($any($event.target).value)"
+    />
+
+    <button
+      type="button"
+      (click)="onStart()"
+      class="start-button"
+      [disabled]="!selectedDifficulty() || !playerName().trim()"
+    >
+      Start
+    </button>
+  </div>
+</div>

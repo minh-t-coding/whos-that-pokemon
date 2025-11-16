@@ -1,0 +1,21 @@
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: var(--color-white);
+  font-family: 'Pokemon', monospace;
+  gap: var(--spacing-xs);
+}
+
+.settings-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+input[type='range'] {
+  width: 100%;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+  margin-bottom: var(--spacing-xs);
+}

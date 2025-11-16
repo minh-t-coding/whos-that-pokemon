@@ -1,0 +1,114 @@
+@font-face {
+  font-family: 'Pokemon';
+  src: url('/pokemon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  /* Color Palette */
+  --color-primary: #8B0000;        /* Dark red - main background */
+  --color-accent: #FFD700;         /* Gold - highlights, buttons */
+  --color-black: #000;              /* Black - borders, text */
+  --color-white: #ffffff;           /* White - backgrounds, text */
+  --color-overlay: rgba(0, 0, 0, 0.7); /* Modal overlay */
+  --color-text-light: #ccc;         /* Light gray text */
+  --color-text-dark: #000;           /* Dark text */
+  --color-text-muted: #666666;      /* Muted gray */
+  --color-border: #000;              /* Border color */
+  --color-success: #4CAF50;         /* Green - success buttons */
+  --color-danger: #f44336;           /* Red - danger buttons */
+  --color-bg-light: #f5f5f5;        /* Light background */
+  --color-bg-gray: #d0d0d0;         /* Gray background */
+  --color-border-light: #ddd;       /* Light border */
+  --color-border-gray: #e0e0e0;     /* Gray border */
+  
+  /* Spacing */
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --spacing-xl: 30px;
+  
+  /* Border */
+  --border-width: 3px;
+  --border-width-thick: 4px;
+  --border-radius: 8px;
+  --border-radius-lg: 12px;
+  
+  /* Z-index */
+  --z-index-modal: 1000;
+  --z-index-overlay: 1000;
+  
+  /* Transitions */
+  --transition-fast: 0.1s;
+  --transition-normal: 0.2s;
+  --transition-slow: 0.3s;
+}
+
+/* Common Button Styles */
+.icon-button,
+.back-button,
+.leaderboard-link {
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-family: 'Pokemon', monospace;
+  font-size: 16px;
+  cursor: pointer;
+  text-transform: lowercase;
+  transition: transform var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+}
+
+.icon-button {
+  font-size: 24px;
+  padding: var(--spacing-sm);
+  justify-content: center;
+}
+
+.icon-button i,
+.back-button i {
+  color: var(--color-white);
+  font-size: 24px;
+}
+
+.icon-button:hover,
+.back-button:hover,
+.leaderboard-link:hover {
+  transform: scale(1.05);
+}
+
+.icon-button:active,
+.back-button:active,
+.leaderboard-link:active {
+  transform: scale(0.95);
+}
+
+.icon-button:disabled,
+.back-button:disabled,
+.leaderboard-link:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Pokemon', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+html, body {
+  height: 100%;
+}

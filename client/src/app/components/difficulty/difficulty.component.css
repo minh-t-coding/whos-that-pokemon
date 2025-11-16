@@ -1,0 +1,146 @@
+.difficulty-container {
+  min-height: 100vh;
+  background-color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.pokemon-logo {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.game-title {
+  color: var(--color-accent);
+  font-family: 'Pokemon', monospace;
+  font-size: 25px;
+  text-align: center;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.section-title {
+  color: var(--color-white);
+  font-family: 'Pokemon', monospace;
+  font-size: 26px;
+  text-align: center;
+  margin: 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.difficulty-options {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.difficulty-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 3px solid transparent;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 200px;
+  max-width: 250px;
+}
+
+.difficulty-card:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+.difficulty-card.selected {
+  border-color: var(--color-accent);
+  background-color: rgba(255, 215, 0, 0.2);
+}
+
+.difficulty-pokeball {
+  width: 60px;
+  height: 60px;
+  image-rendering: pixelated;
+  margin-bottom: 10px;
+}
+
+.difficulty-card h3 {
+  color: var(--color-white);
+  font-family: 'Pokemon', monospace;
+  font-size: 20px;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+.difficulty-card p {
+  color: var(--color-accent);
+  font-family: 'Pokemon', monospace;
+  font-size: 14px;
+  margin: 10px 0 0 0;
+}
+
+.name-input {
+  width: 300px;
+  padding: 12px;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--border-radius);
+  font-family: 'Pokemon', monospace;
+  font-size: 16px;
+  background-color: var(--color-white);
+  color: var(--color-text-dark);
+  text-align: center;
+}
+
+.name-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.start-button {
+  background-color: var(--color-accent);
+  border: var(--border-width-thick) solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: 15px 60px;
+  font-family: 'Pokemon', monospace;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-text-dark);
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: transform 0.1s;
+  margin-top: 20px;
+}
+
+.start-button:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+.start-button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.start-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

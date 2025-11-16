@@ -1,0 +1,61 @@
+.score-display {
+  margin: 30px 0;
+}
+
+.score-label {
+  color: var(--color-white);
+  font-family: 'Pokemon', monospace;
+  font-size: 20px;
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.score-value {
+  color: var(--color-accent);
+  font-family: 'Pokemon', monospace;
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.modal-button {
+  padding: var(--spacing-md) var(--spacing-xl);
+  border: var(--border-width-thick) solid var(--color-border);
+  border-radius: var(--border-radius);
+  font-family: 'Pokemon', monospace;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: transform 0.1s;
+}
+
+.modal-button:hover {
+  transform: scale(1.05);
+}
+
+.modal-button:active {
+  transform: scale(0.95);
+}
+
+.modal-button.retry {
+  background-color: var(--color-accent);
+  color: var(--color-text-dark);
+}
+
+.modal-button.leaderboard {
+  background-color: var(--color-success);
+  color: var(--color-white);
+}
+
+.modal-button.quit {
+  background-color: var(--color-danger);
+  color: var(--color-white);
+}
+

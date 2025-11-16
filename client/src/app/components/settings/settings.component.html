@@ -1,0 +1,32 @@
+<app-modal
+  [isOpen]="isOpen()"
+  [title]="'settings'"
+  [variant]="'pokemon'"
+  (closeModal)="onClose()"
+>
+  <div class="settings-controls">
+    <label>
+      Music Volume: {{ music() }}%
+      <input
+        type="range"
+        min="0"
+        max="100"
+        step="1"
+        [value]="music()"
+        (input)="updateMusic($any($event.target).valueAsNumber)"
+      />
+    </label>
+
+    <label>
+      Sfx Volume: {{ volume() }}%
+      <input
+        type="range"
+        min="0"
+        max="100"
+        step="1"
+        [value]="volume()"
+        (input)="updateVolume($any($event.target).valueAsNumber)"
+      />
+    </label>
+  </div>
+</app-modal>

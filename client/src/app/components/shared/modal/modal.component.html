@@ -1,0 +1,22 @@
+@if (isOpen()) {
+<div class="modal-overlay" (click)="onBackdropClick($event)">
+  <div
+    class="modal-content"
+    [class.modal-pokemon]="variant() === 'pokemon'"
+    (click)="onModalClick($event)"
+  >
+    @if (title() || showCloseButton()) {
+    <div class="modal-header">
+      @if (title()) {
+      <h2 class="modal-title">{{ title() }}</h2>
+      } @if (showCloseButton()) {
+      <button type="button" class="close-button" (click)="onClose()" aria-label="Close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      }
+    </div>
+    }
+    <ng-content></ng-content>
+  </div>
+</div>
+}

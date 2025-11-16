@@ -1,0 +1,14 @@
+<div class="header">
+  <button type="button" class="icon-button" (click)="onSettingsClick()" aria-label="Settings">
+    <i class="fa-solid fa-gear"></i>
+  </button>
+  <div class="header-right">
+    <button type="button" class="leaderboard-link" (click)="onLeaderboardClick()">leaderboard</button>
+    @if (showQuit) {
+    <button type="button" class="quit-button" (click)="onQuitClick()">
+      <i class="fa-solid fa-door-open"></i>
+      <span>{{ quitLabel }}</span>
+    </button>
+    }
+  </div>
+</div>

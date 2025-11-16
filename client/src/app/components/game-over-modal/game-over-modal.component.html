@@ -1,0 +1,13 @@
+<app-modal [isOpen]="true" [title]="'Game Over'" [variant]="'pokemon'" [showCloseButton]="false">
+  <div class="score-display">
+    <p class="score-label">Your Score</p>
+    <p class="score-value">{{ score() }}</p>
+  </div>
+  <div class="modal-actions">
+    <button type="button" class="modal-button retry" (click)="onRetry()">Retry</button>
+    <button type="button" class="modal-button leaderboard" (click)="onLeaderboard()">
+      Leaderboard
+    </button>
+    <button type="button" class="modal-button quit" (click)="onQuit()">Quit</button>
+  </div>
+</app-modal>
