@@ -32,7 +32,7 @@ import {
   selectDifficultyRange,
   selectVolume,
 } from '../../store/selectors';
-import { calculateScore, calculateHintPenalty, calculateTryPenalty } from '../../store/utils/score.utils';
+import { calculateScore } from '../../store/utils/score.utils';
 
 @Component({
   selector: 'app-game',
@@ -213,8 +213,8 @@ export class GameComponent implements OnInit, OnDestroy {
       const settings = this.gameSettings();
       if (settings) {
         const tryNumber = this.tries() + 1;
-        const penalty = calculateTryPenalty(tryNumber, settings.difficulty);
-        this.store.dispatch(GameActions.deductScore({ amount: penalty }));
+        // const penalty = calculateTryPenalty(tryNumber, settings.difficulty);
+        // this.store.dispatch(GameActions.deductScore({ amount: penalty }));
       }
       this.store.dispatch(GameActions.incrementTries());
       this.guess.set('');
@@ -306,8 +306,8 @@ export class GameComponent implements OnInit, OnDestroy {
   private applyHintPenalty(hintType: 'cry' | 'types' | 'blur' | 'reveal'): void {
     const settings = this.gameSettings();
     if (settings && hintType !== 'reveal') {
-      const penalty = calculateHintPenalty(hintType, settings.difficulty);
-      this.store.dispatch(GameActions.deductScore({ amount: penalty }));
+      // const penalty = calculateHintPenalty(hintType, settings.difficulty);
+      // this.store.dispatch(GameActions.deductScore({ amount: penalty }));
     }
   }
 

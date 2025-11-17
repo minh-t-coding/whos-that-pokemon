@@ -30,11 +30,20 @@ export const leaderboardReducer = createReducer(
     error,
   })),
   on(LeaderboardActions.syncLeaderboardWithScore, (state, { playerName, currentScore }) => {
+    const existingEntry = state.entries.find(
+      (entry) => entry.name.toLowerCase() === playerName.toLowerCase()
+    );
+
+    if (existingEntry && currentScore <= existingEntry.score) {
+      return state;
+    }
+
     const filteredEntries = state.entries.filter(
       (entry) => entry.name.toLowerCase() !== playerName.toLowerCase()
     );
 
     if (currentScore > 0) {
+
       const updatedEntries = [
         ...filteredEntries,
         {
