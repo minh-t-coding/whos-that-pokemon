@@ -25,7 +25,7 @@ export class MusicService {
 
   initialize(): void {
     if (!this.audio) {
-      const musicPath = '/Pokemon_music.mp3';
+      const musicPath = './Pokemon_music.mp3';
       this.audio = new Audio(musicPath);
       this.audio.loop = true;
       this.audio.volume = this.musicVolume() / 100;

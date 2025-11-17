@@ -1,9 +1,4 @@
-<app-modal
-  [isOpen]="isOpen()"
-  [title]="'leaderboard'"
-  [variant]="'pokemon'"
-  (closeModal)="onClose()"
->
+<app-modal [isOpen]="isOpen()" [title]="'leaderboard'" [variant]="'pokemon'" (closeModal)="onClose()">
   <div class="leaderboard-entries">
     @if (entries.length === 0) {
     <div class="no-entries">No scores yet. Be the first!</div>
@@ -17,13 +12,8 @@
 
   <div class="badge-row">
     @for (badge of [1, 2, 3, 4, 5, 6, 7, 8]; track badge) {
-    <img
-      alt="Gym Badge"
-      [src]="'/gym_badge_' + badge + '.png'"
-      [alt]="'Gym Badge ' + badge"
-      [title]="'Gym Badge ' + badge"
-      class="badge-icon"
-    />
+    <img alt="Gym Badge" [src]="'./gym_badge_' + badge + '.png'" [alt]="'Gym Badge ' + badge"
+      [title]="'Gym Badge ' + badge" class="badge-icon" />
     }
   </div>
 </app-modal>

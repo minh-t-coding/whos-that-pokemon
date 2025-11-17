@@ -7,39 +7,54 @@
 
 :root {
   /* Color Palette */
-  --color-primary: #8B0000;        /* Dark red - main background */
-  --color-accent: #FFD700;         /* Gold - highlights, buttons */
-  --color-black: #000;              /* Black - borders, text */
-  --color-white: #ffffff;           /* White - backgrounds, text */
-  --color-overlay: rgba(0, 0, 0, 0.7); /* Modal overlay */
-  --color-text-light: #ccc;         /* Light gray text */
-  --color-text-dark: #000;           /* Dark text */
-  --color-text-muted: #666666;      /* Muted gray */
-  --color-border: #000;              /* Border color */
-  --color-success: #4CAF50;         /* Green - success buttons */
-  --color-danger: #f44336;           /* Red - danger buttons */
-  --color-bg-light: #f5f5f5;        /* Light background */
-  --color-bg-gray: #d0d0d0;         /* Gray background */
-  --color-border-light: #ddd;       /* Light border */
-  --color-border-gray: #e0e0e0;     /* Gray border */
-  
+  --color-primary: #8B0000;
+  /* Dark red - main background */
+  --color-accent: #FFD700;
+  /* Gold - highlights, buttons */
+  --color-black: #000;
+  /* Black - borders, text */
+  --color-white: #ffffff;
+  /* White - backgrounds, text */
+  --color-overlay: rgba(0, 0, 0, 0.7);
+  /* Modal overlay */
+  --color-text-light: #ccc;
+  /* Light gray text */
+  --color-text-dark: #000;
+  /* Dark text */
+  --color-text-muted: #666666;
+  /* Muted gray */
+  --color-border: #000;
+  /* Border color */
+  --color-success: #4CAF50;
+  /* Green - success buttons */
+  --color-danger: #f44336;
+  /* Red - danger buttons */
+  --color-bg-light: #f5f5f5;
+  /* Light background */
+  --color-bg-gray: #d0d0d0;
+  /* Gray background */
+  --color-border-light: #ddd;
+  /* Light border */
+  --color-border-gray: #e0e0e0;
+  /* Gray border */
+
   /* Spacing */
   --spacing-xs: 5px;
   --spacing-sm: 10px;
   --spacing-md: 15px;
   --spacing-lg: 20px;
   --spacing-xl: 30px;
-  
+
   /* Border */
   --border-width: 3px;
   --border-width-thick: 4px;
   --border-radius: 8px;
   --border-radius-lg: 12px;
-  
+
   /* Z-index */
   --z-index-modal: 1000;
   --z-index-overlay: 1000;
-  
+
   /* Transitions */
   --transition-fast: 0.1s;
   --transition-normal: 0.2s;
@@ -109,6 +124,7 @@ body {
   overflow-x: hidden;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }

@@ -49,7 +49,7 @@ export class CatchAnimationComponent implements OnInit, OnDestroy {
 
   private playCaptureSound(): void {
     try {
-      this.captureSound = new Audio('/Pokemon_Capture_sound_effect.mp3');
+      this.captureSound = new Audio('./Pokemon_Capture_sound_effect.mp3');
       this.captureSound.volume = this.volume() / 100;
       this.captureSound.play().catch((error) => {
         console.error('Error playing capture sound:', error);
