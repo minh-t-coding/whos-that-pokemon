@@ -6,6 +6,7 @@
   "scripts": {
     "serve": "cd client && npm start",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build:gh-pages": "cd client && ng build --configuration=production --output-path ../docs --base-href /minh-t-coding/WhosThatPokemon",
     "postinstall": "cd client && npm install"
   },
   "repository": {
