@@ -2,7 +2,7 @@
 
 An interactive Pokémon guessing game built with Angular and NgRx. Test your knowledge of Pokémon by identifying them from silhouettes, with hints available if you get stuck.
 
-**[Play the Game](https://minh-t-coding.github.io/WhosThatPokemon/)**
+**[Play the Game](https://minh-t-coding.github.io/whos-that-pokemon/)**
 
 ## Installation
 
@@ -14,8 +14,8 @@ An interactive Pokémon guessing game built with Angular and NgRx. Test your kno
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/minh-t-coding/WhosThatPokemon.git
-cd WhosThatPokemon
+git clone https://github.com/minh-t-coding/whos-that-pokemon.git
+cd whos-that-pokemon
 ```
 
 2. **Install dependencies:**
