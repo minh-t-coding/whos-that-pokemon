@@ -73,13 +73,9 @@ The app uses browser localStorage to persist:
 
 ## Deployment
 
-Deployed on GitHub Pages at: https://minh-t-coding.github.io/WhosThatPokemon/
+Deployed on GitHub Pages at: https://minh-t-coding.github.io/whos-that-pokemon/
 
 ## Contributors
 
 - **Minh Nguyen**
 - **Devan Martinez**
-
-## License
-
-This project is open source and available under the ISC License.
